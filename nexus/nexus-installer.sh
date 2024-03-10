@@ -69,6 +69,15 @@ else
         INFO "Your User Is Root"
 fi
 
+# Check Internet Connection
+INFO "Check Internet Connection"
+ping -c 1 8.8.8.8 >> /dev/null 2> /dev/null
+if [ $? -eq 0 ]
+then
+        SUCCESSFUL "Internet is Connected"
+else
+        ERROR "Internet is Disconnected"
+fi
 
 # Update the dnf packages Install OpenJDK 1.8
 INFO "Update the dnf packages"
