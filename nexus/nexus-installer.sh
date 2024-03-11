@@ -77,6 +77,7 @@ then
         SUCCESSFUL "Internet is Connected"
 else
         ERROR "Internet is Disconnected"
+	exit 0
 fi
 
 # Update the dnf packages Install OpenJDK 1.8
