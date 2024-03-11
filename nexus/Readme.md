@@ -2,7 +2,7 @@
 
 - Install With Script
   - Install Openjdk8 With dnf
-  - Install Openjdk8 With Pakage
+  - Install Openjdk8 With Package
  - Install Docker Compose
  - Install Ansible
  - [Install Manually](#Install-Manually)
