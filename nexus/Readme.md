@@ -3,6 +3,7 @@
 ### Update the dnf packages and Install OpenJDK 1.8
 
 `dnf update -y`
+
 `dnf install java-1.8.0-openjdk.x86_64 -y`
 
 ### Create the required directory to store Nexus files
@@ -58,6 +59,7 @@ EOF
 ### Manage Nexus Service, Execute the following command to add nexus service to boot
 
 `systemctl daemon-reload`
+
 `systemctl enable --now nexus.service`
 
 ### Show default login password
