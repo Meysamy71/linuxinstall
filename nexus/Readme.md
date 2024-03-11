@@ -1,5 +1,12 @@
 # Install Nexus Repository on Rocky linux
 
+- Install With Script
+  - Install Openjdk8 With dnf
+  - Install Openjdk8 With Pakage
+ - Install Docker Compose
+ - Install Ansible
+ - Install Manually 
+
 ### Update the dnf packages and Install OpenJDK 1.8
 
 `dnf update -y`
