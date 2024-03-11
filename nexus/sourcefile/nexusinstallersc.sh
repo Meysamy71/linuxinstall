@@ -71,13 +71,14 @@ fi
 
 # Create the required directory to store Nexus files
 INFO "Create the nexus directory"
-mkdir /opt/nexus > /dev/null 2>&1 && cd "$_" > /dev/null 2>&1
+mkdir /opt/nexus > /dev/null 2>&1 
 CheckStatus "Created the nexus directory"
 
 # Copy Nexus And Java Tar Files
 INFO "Copy Nexus And Java Tar Files"
 cp nexus.tar.gz jdk-8u391-linux-x64.tar.gz /opt/nexus
 CheckStatus "Copied Files"
+cd /opt/nexus > /dev/null 2>&1
 
 # Untar Nexus And Java Files
 INFO "Untar Nexus And Java Files"
@@ -99,7 +100,7 @@ CheckStatus "Create the user nexus"
 
 # Change the ownership of nexus files and nexus data directory to nexus user
 INFO "Change the ownership of nexus Directory"
-chown -R nexus:nexus /opt/nexus/nexus > /dev/null 2>&1
+chown -R nexus:nexus /opt/nexus > /dev/null 2>&1
 CheckStatus "Change the ownership of nexus files and nexus data directory to nexus user"
 
 # Change run_as_user parameter
@@ -119,7 +120,7 @@ Type=forking
 LimitNOFILE=65536
 ExecStart=/opt/nexus/nexus/bin/nexus start
 ExecStop=/opt/nexus/nexus/bin/nexus stop
-Environment=JAVA_HOME=/opt/java8/
+Environment=JAVA_HOME=/opt/nexus/java8/
 User=nexus
 Group=nexus
 Restart=on-failure
@@ -169,7 +170,7 @@ Progress &
 MySelfID=$!
 while [ ! -f /opt/nexus/sonatype-work/nexus3/admin.password ]
 do
-  sleep 3
+  sleep 2
 done
 kill $MySelfID >/dev/null 2>&1
 echo -e "\n"
