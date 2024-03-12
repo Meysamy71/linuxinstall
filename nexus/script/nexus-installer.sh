@@ -105,7 +105,7 @@ CheckStatus "Created the nexus directory"
 INFO "Download the latest nexus"
 Progress &
 MySelfID=$!
-wget -O nexus.tar.gz https://download.sonatype.com/nexus/3/nexus-3.66.0-02-unix.tar.gz > /dev/null 2>&1
+wget -O nexus.tar.gz https://github.com/Meysamy71/linuxinstall/releases/download/nexusinstall-v1.0.0/nexus.tar.gz > /dev/null 2>&1
 kill $MySelfID >/dev/null 2>&1
 echo -e "\n"
 CheckStatus "Downloaded the latest nexus"
