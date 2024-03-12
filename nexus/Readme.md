@@ -1,4 +1,4 @@
-![Nexus Logo](https://github.com/Meysamy71/linuxinstall/blob/main/nexus/src/nexuslogo.JPG)
+<img src="https://github.com/Meysamy71/linuxinstall/blob/main/nexus/src/nexuslogo.JPG" alt="Nexus Logo" width="1000" height="300">
 
 # Install Nexus Repository on Rocky linux
 
