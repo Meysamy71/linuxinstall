@@ -2,12 +2,9 @@
 
 # Install Nexus Repository on Rocky linux
 
-- Install With Script
-  - Install Openjdk8 With dnf
-  - Install Openjdk8 With Package
- - Install Docker Compose
- - Install Ansible
- - [Install Manually](#Install-Manually)
+- [Install With Script](https://github.com/Meysamy71/linuxinstall/tree/main/nexus/script)
+- [Install Docker Compose](https://github.com/Meysamy71/linuxinstall/tree/main/nexus/docker)
+- [Install Manually](#Install-Manually)
 
 ## Install Manually 
 
