@@ -20,7 +20,11 @@
 
 `mkdir /opt/nexus && cd "$_"`
 
-### Download the latest nexus
+### Check the latest version
+
+[Latest Version](https://help.sonatype.com/en/download.html)
+
+### Download the latest nexus (now v-3.66.0-02)
 
 `wget -O nexus.tar.gz https://download.sonatype.com/nexus/3/nexus-3.66.0-02-unix.tar.gz`
 
