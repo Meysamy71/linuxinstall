@@ -2,6 +2,8 @@
 
 # Install Nexus Repository on Rocky linux
 
+<img src="https://img.shields.io/badge/Nexus-V3.66.0.02-green"></img>
+
 - [Install With Script](https://github.com/Meysamy71/linuxinstall/tree/main/nexus/script)
 - [Install Docker Compose](https://github.com/Meysamy71/linuxinstall/tree/main/nexus/docker)
 - [Install Manually](#Install-Manually)
