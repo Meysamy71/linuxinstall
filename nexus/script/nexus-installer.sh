@@ -2,12 +2,22 @@
 
 clear
 
+# URL of the Nexus download page
+URL="https://help.sonatype.com/en/download.html"
+# Fetch the page content
+CONTENT=`curl -s $URL`
+# Extract the latest version number
+LATEST_VERSION=`echo $CONTENT |  grep -oP 'https://download.sonatype.com/nexus/3/nexus-\S*-unix.tar.gz' | head -1 | grep -o 'nexus-\S*-unix.tar.gz' |grep -Po "\d+\.\d+\.\d+-?\d+"`
+# Construct the download URL
+DOWNLOAD_URL="https://download.sonatype.com/nexus/3/nexus-${LATEST_VERSION}-unix.tar.gz"
+
+
 echo """
 ##############################################################################
 ##         Welcome To Nexus Repository Installer                            ##
 ##         Date            `date "+%F %T "`                             ##
 ##         Version         Nexus-installer-1.0.0                            ##
-##         Nexus Version   nexus-3.66.0-02                                  ##
+##         Nexus Version   $LATEST_VERSION                                        ##
 ##         Author          Meysam Yavarikhoo                                ##
 ##         Copyright       Copyright (c) 2024 https://github.com/Meysamy71  ##
 ##         License         GNU General Public License                       ##
@@ -66,7 +76,7 @@ then
         WARNING "You Must Run This Script From Root User Only"
         exit 0
 else
-        INFO "Your User Is Root"
+        SUCCESSFUL "Your User Is Root"
 fi
 
 # Check Internet Connection
@@ -103,10 +113,7 @@ CheckStatus "Created the nexus directory"
 
 # Download the latest nexus
 INFO "Download the latest nexus"
-Progress &
-MySelfID=$!
-wget -O nexus.tar.gz https://github.com/Meysamy71/linuxinstall/releases/download/nexusinstall-v1.0.0/nexus.tar.gz > /dev/null 2>&1
-kill $MySelfID >/dev/null 2>&1
+wget -O nexus.tar.gz $DOWNLOAD_URL -q --show-progress
 echo -e "\n"
 CheckStatus "Downloaded the latest nexus"
 
